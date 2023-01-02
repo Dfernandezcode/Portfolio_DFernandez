@@ -1,0 +1,111 @@
+@import '__reset';
+@import '__variables';
+
+body {
+	background-color: $bg-color;
+	color: $text;
+}
+.topnav {
+	/*mixin center-flexitem*/
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	height: 60px;
+	border-bottom: 1px solid $text;
+	background-color: blue;
+
+	&__name-container {
+		background-color: red;
+		margin-left: 20px;
+	}
+
+	&__name {
+		font-weight: 100;
+		font-size: 20px;
+	}
+
+	&__contactbtn {
+		background-color: $text;
+		color: $bg-color;
+		height: 100%;
+		width: 5em;
+		/*mixin center-flexitem*/
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+.side {
+	height: 100vh;
+	width: 100%;
+
+	display: grid;
+	place-items: center;
+
+	overflow: hidden;
+	position: absolute;
+}
+
+.side .title {
+	color: $text;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 4vw;
+	margin: 0px 10vw;
+	width: 80vw;
+}
+
+.side .fancytext {
+	font-size: 1em;
+	line-height: 0.5em;
+}
+
+#left-side {
+	background-color: $bg-color;
+	z-index: 2;
+	width: 60%;
+}
+
+#left-side .title {
+	color: $text;
+}
+
+#left-side .fancytext {
+	color: orange;
+}
+
+#right-side {
+	background-color: $text;
+}
+
+#right-side .title {
+	color: $bg-color;
+}
+
+#right-side .fancytext {
+	color: orange;
+}
+/*
+.socials {
+	width: 50px;
+	height: 100%;
+	background-color: green;
+}
+
+.name {
+	display: flex;
+}
+
+.intro {
+	&__lead--3 {
+	}
+}
+
+.intro__title {
+	display: flex;
+	flex-direction: column;
+	text-transform: uppercase;
+	font-size: 50px;
+}
+*/

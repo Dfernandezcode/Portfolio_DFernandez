@@ -1,0 +1,186 @@
+/* 
+RESET SHEET - Josh W. Comeau
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  7. Removing built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+span {
+  overflow-wrap: break-word;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/*END OF RESET SHEET*/
+/*COLOR PALETTE*/
+/*DARK MODE (for actual humans)*/
+/*LIGHT MODE (for NPCs)*/
+body {
+  background-color: #fffcf2;
+  color: #403d39;
+}
+
+.topnav {
+  /*mixin center-flexitem*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  border-bottom: 1px solid #403d39;
+  background-color: blue;
+}
+.topnav__name-container {
+  background-color: red;
+  margin-left: 20px;
+}
+.topnav__name {
+  font-weight: 100;
+  font-size: 20px;
+}
+.topnav__contactbtn {
+  background-color: #403d39;
+  color: #fffcf2;
+  height: 100%;
+  width: 5em;
+  /*mixin center-flexitem*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.side {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  position: absolute;
+}
+
+.side .title {
+  color: #403d39;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 4vw;
+  margin: 0px 10vw;
+  width: 80vw;
+}
+
+.side .fancytext {
+  font-size: 1em;
+  line-height: 0.5em;
+}
+
+#left-side {
+  background-color: #fffcf2;
+  z-index: 2;
+  width: 60%;
+}
+
+#left-side .title {
+  color: #403d39;
+}
+
+#left-side .fancytext {
+  color: orange;
+}
+
+#right-side {
+  background-color: #403d39;
+}
+
+#right-side .title {
+  color: #fffcf2;
+}
+
+#right-side .fancytext {
+  color: orange;
+}
+
+/*
+.socials {
+	width: 50px;
+	height: 100%;
+	background-color: green;
+}
+
+.name {
+	display: flex;
+}
+
+.intro {
+	&__lead--3 {
+	}
+}
+
+.intro__title {
+	display: flex;
+	flex-direction: column;
+	text-transform: uppercase;
+	font-size: 50px;
+}
+*//*# sourceMappingURL=main.css.map */
