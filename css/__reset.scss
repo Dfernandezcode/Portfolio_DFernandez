@@ -2,7 +2,8 @@
 RESET SHEET - Josh W. Comeau
 */
 
-*,
+@import '__variables';
+
 *::before,
 *::after {
 	box-sizing: border-box;
@@ -14,10 +15,15 @@ RESET SHEET - Josh W. Comeau
 /*
   3. Allow percentage-based heights in the application
 */
+html {
+	font-size: 20px;
+}
+
 html,
 body {
-	height: 100%;
+	height: 100vh;
 	overflow: hidden;
+	background-color: $background-color;
 }
 /*
   Typographic tweaks!

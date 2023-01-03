@@ -1,9 +1,10 @@
-const left = document.getElementById("left-side");
+document.getElementById("container-right").onmousemove = e => {
+  for(const card of document.getElementsByClassName("container-right__card")) {
+    const rect = card.getBoundingClientRect(),
+          x = e.clientX - rect.left,
+          y = e.clientY - rect.top;
 
-const handleOnMove = e => {
-    left.style.width = `${e.clientX / window.innerWidth * 100}%`;
+    card.style.setProperty("--mouse-x", `${x}px`);
+    card.style.setProperty("--mouse-y", `${y}px`);
+  };
 }
-
-document.onmousemove = e => handleOnMove(e);
-
-document.omtouchmove = e => handleOnMove(e.touches[0]);

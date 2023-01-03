@@ -1,7 +1,13 @@
+/*Fonts*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&family=Roboto:wght@300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Condensed:wght@300;400;700&display=swap");
+/*SCSS Externals*/
 /* 
 RESET SHEET - Josh W. Comeau
 */
-*,
+/*COLOR PALETTE*/
+/*DARK MODE (for actual humans)*/
+/*LIGHT MODE (for NPCs)*/
 *::before,
 *::after {
   box-sizing: border-box;
@@ -14,10 +20,15 @@ RESET SHEET - Josh W. Comeau
 /*
   3. Allow percentage-based heights in the application
 */
+html {
+  font-size: 20px;
+}
+
 html,
 body {
-  height: 100%;
+  height: 100vh;
   overflow: hidden;
+  background-color: #22223b;
 }
 
 /*
@@ -79,108 +90,101 @@ span {
 /*COLOR PALETTE*/
 /*DARK MODE (for actual humans)*/
 /*LIGHT MODE (for NPCs)*/
-body {
-  background-color: #fffcf2;
-  color: #403d39;
-}
-
-.topnav {
-  /*mixin center-flexitem*/
+/*Navigation*/
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  height: 60px;
-  border-bottom: 1px solid #403d39;
-  background-color: blue;
+  margin: 20px 50px;
+  font-family: Roboto, sans-serif;
+  font-size: 0.8rem;
 }
-.topnav__name-container {
-  background-color: red;
-  margin-left: 20px;
+
+.navbar__button {
+  background-color: #f06543;
+  color: #d9dbf1;
+  font-family: Roboto, sans-serif;
+  font-weight: 600;
+  width: 100px;
+  height: 30px;
+  border-radius: 25px;
+  border: none;
 }
-.topnav__name {
-  font-weight: 100;
-  font-size: 20px;
+
+.navbar__button:hover {
+  background-color: #22223b;
+  border: 1px solid #f06543;
+  cursor: pointer;
 }
-.topnav__contactbtn {
-  background-color: #403d39;
-  color: #fffcf2;
-  height: 100%;
-  width: 5em;
-  /*mixin center-flexitem*/
+
+.navbar__menu-link {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  align-items: center;
+  color: #d9dbf1;
+}
+
+.navbar__menu-link-item:hover {
+  border-bottom: 1px solid #d9dbf1;
+  cursor: pointer;
+}
+
+/*landing page content*/
+.container-left {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  flex-direction: column;
+  height: 300px;
+  margin-left: 2rem;
+}
+.container-left__name {
+  font-family: roboto, serif;
+  font-weight: 300;
+  font-size: 2rem;
+  color: #4a4e69;
+  line-height: 1.5rem;
+  border-left: 1px solid #4a4e69;
+  padding: 1rem 1.5rem;
+}
+.container-left__jobtitle {
+  font-family: roboto, serif;
+  font-weight: 300;
+  font-size: 3rem;
+  color: #d9dbf1;
+  border-left: 1px solid #4a4e69;
+  padding-left: 1.5rem;
+  line-height: 2.5rem;
 }
 
-.side {
-  height: 100vh;
+/*Cards*/
+#cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  max-width: 100%;
+  width: calc(100% - 20px);
+}
+
+.card {
+  height: 260px;
+  width: 30%;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.02);
+  cursor: pointer;
+}
+
+.card::before {
+  background: radial-gradient(800px circle at 100px 100px), white, transparent 40%;
+  border-radius: inherit;
+  content: "";
+  height: 100%;
   width: 100%;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
+  top: 0px;
+  left: 0px;
   position: absolute;
-}
-
-.side .title {
-  color: #403d39;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 4vw;
-  margin: 0px 10vw;
-  width: 80vw;
-}
-
-.side .fancytext {
-  font-size: 1em;
-  line-height: 0.5em;
-}
-
-#left-side {
-  background-color: #fffcf2;
   z-index: 2;
-  width: 60%;
-}
-
-#left-side .title {
-  color: #403d39;
-}
-
-#left-side .fancytext {
-  color: orange;
-}
-
-#right-side {
-  background-color: #403d39;
-}
-
-#right-side .title {
-  color: #fffcf2;
-}
-
-#right-side .fancytext {
-  color: orange;
-}
-
-/*
-.socials {
-	width: 50px;
-	height: 100%;
-	background-color: green;
-}
-
-.name {
-	display: flex;
-}
-
-.intro {
-	&__lead--3 {
-	}
-}
-
-.intro__title {
-	display: flex;
-	flex-direction: column;
-	text-transform: uppercase;
-	font-size: 50px;
-}
-*//*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */

@@ -1,111 +1,110 @@
+/*Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&family=Roboto:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Condensed:wght@300;400;700&display=swap');
+/*SCSS Externals*/
 @import '__reset';
 @import '__variables';
 
-body {
-	background-color: $bg-color;
-	color: $text;
-}
-.topnav {
-	/*mixin center-flexitem*/
+/*Navigation*/
+
+.navbar {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	width: 100%;
-	height: 60px;
-	border-bottom: 1px solid $text;
-	background-color: blue;
+	margin: 20px 50px;
+	font-family: Roboto, sans-serif;
+	font-size: 0.8rem;
+}
 
-	&__name-container {
-		background-color: red;
-		margin-left: 20px;
-	}
+.navbar__button {
+	background-color: $button-elements;
+	color: $content-text;
+	font-family: Roboto, sans-serif;
+	font-weight: 600;
+	width: 100px;
+	height: 30px;
+	border-radius: 25px;
+	border: none;
+}
+
+.navbar__button:hover {
+	background-color: $background-color;
+	border: 1px solid $button-elements;
+	cursor: pointer;
+}
+
+.navbar__menu-link {
+	display: flex;
+	gap: 2rem;
+	list-style: none;
+	align-items: center;
+	color: $content-text;
+}
+
+.navbar__menu-link-item:hover {
+	border-bottom: 1px solid $content-text;
+	cursor: pointer;
+}
+/*landing page content*/
+
+.container-left {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	flex-direction: column;
+	height: 300px;
+	margin-left: 2rem;
 
 	&__name {
-		font-weight: 100;
-		font-size: 20px;
+		font-family: roboto, serif;
+		font-weight: 300;
+		font-size: 2rem;
+		color: #4a4e69;
+		line-height: 1.5rem;
+		border-left: 1px solid #4a4e69;
+		padding: 1rem 1.5rem;
 	}
 
-	&__contactbtn {
-		background-color: $text;
-		color: $bg-color;
-		height: 100%;
-		width: 5em;
-		/*mixin center-flexitem*/
-		display: flex;
-		justify-content: center;
-		align-items: center;
+	&__jobtitle {
+		font-family: roboto, serif;
+		font-weight: 300;
+		font-size: 3rem;
+		color: $subtitle-text;
+		border-left: 1px solid $borders;
+		padding-left: 1.5rem;
+		line-height: 2.5rem;
 	}
 }
 
-.side {
-	height: 100vh;
-	width: 100%;
+/*Cards*/
 
-	display: grid;
-	place-items: center;
-
-	overflow: hidden;
-	position: absolute;
+#cards {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 8px;
+	max-width: 100%;
+	width: calc(100% - 20px);
 }
 
-.side .title {
-	color: $text;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 4vw;
-	margin: 0px 10vw;
-	width: 80vw;
+.card {
+	height: 260px;
+	width: 30%;
+	border-radius: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	background-color: rgba(255, 255, 255, 0.02);
+	cursor: pointer;
 }
 
-.side .fancytext {
-	font-size: 1em;
-	line-height: 0.5em;
-}
-
-#left-side {
-	background-color: $bg-color;
-	z-index: 2;
-	width: 60%;
-}
-
-#left-side .title {
-	color: $text;
-}
-
-#left-side .fancytext {
-	color: orange;
-}
-
-#right-side {
-	background-color: $text;
-}
-
-#right-side .title {
-	color: $bg-color;
-}
-
-#right-side .fancytext {
-	color: orange;
-}
-/*
-.socials {
-	width: 50px;
+.card::before {
+	background: radial-gradient(800px circle at 100px 100px),
+		rgba($color: #fff, $alpha: 1), transparent 40%;
+	border-radius: inherit;
+	content: '';
 	height: 100%;
-	background-color: green;
+	width: 100%;
+	top: 0px;
+	left: 0px;
+	position: absolute;
+	z-index: 2;
 }
-
-.name {
-	display: flex;
-}
-
-.intro {
-	&__lead--3 {
-	}
-}
-
-.intro__title {
-	display: flex;
-	flex-direction: column;
-	text-transform: uppercase;
-	font-size: 50px;
-}
-*/
