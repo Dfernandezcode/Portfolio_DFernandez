@@ -1,5 +1,5 @@
-document.getElementById("container-right").onmousemove = e => {
-  for(const card of document.getElementsByClassName("container-right__card")) {
+document.getElementById("cards").onmousemove = e => {
+  for(const card of document.getElementsByClassName("card")) {
     const rect = card.getBoundingClientRect(),
           x = e.clientX - rect.left,
           y = e.clientY - rect.top;
